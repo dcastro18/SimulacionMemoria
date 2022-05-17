@@ -21,11 +21,9 @@ typedef struct PCB {
 } PCB;
 
 
-
 int main(int argc, char const *argv[])
 {
 
-    
     int n, opcion;
 
     do

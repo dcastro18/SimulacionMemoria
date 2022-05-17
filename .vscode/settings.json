@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "paginacion.h": "c"
+        "paginacion.h": "c",
+        "stdio.h": "c",
+        "semaphore.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
