@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+
 int main()
 {
     

@@ -2,7 +2,10 @@
     "files.associations": {
         "paginacion.h": "c",
         "stdio.h": "c",
-        "semaphore.h": "c"
+        "semaphore.h": "c",
+        "stdlib.h": "c",
+        "proceso.h": "c",
+        "sem.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
