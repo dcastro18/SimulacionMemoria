@@ -1,0 +1,9 @@
+18/05/2022 23:02:29: Proceso: Asignación. Hilo: 139867101533952. Filas Ocupadas:0-3. Tamaño 4. Tiempo 24
+18/05/2022 23:02:44: Proceso: Asignación. Hilo: 139867019278080. Filas Ocupadas:4-8. Tamaño 5. Tiempo 54
+18/05/2022 23:02:54: Proceso: Desasignación. Hilo: 139867101533952. Filas Ocupadas:0-3. Tamaño 4. Tiempo 24
+18/05/2022 23:02:57: Proceso: Asignación. Hilo: 139867010885376. Filas Ocupadas:0-2. Tamaño 3. Tiempo 52
+18/05/2022 23:03:07: Proceso: Asignación. Hilo: 139867002492672. Filas Ocupadas:9-18. Tamaño 10. Tiempo 34
+18/05/2022 23:03:19: Proceso: Asignación. Hilo: 139866994099968. Filas Ocupadas:19-23. Tamaño 5. Tiempo 59
+18/05/2022 23:03:29: Proceso: Asignación. Hilo: 139866985707264. Filas Ocupadas:24-29. Tamaño 6. Tiempo 57
+18/05/2022 23:03:39: Proceso: Desasignación. Hilo: 139867019278080. Filas Ocupadas:4-8. Tamaño 5. Tiempo 54
+18/05/2022 23:03:42: Proceso: Desasignación. Hilo: 139867002492672. Filas Ocupadas:9-18. Tamaño 10. Tiempo 34

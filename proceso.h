@@ -5,7 +5,7 @@ typedef enum Estado {Fuera=-1, Bloqueado=0, Ejecutando=1, RegionCritica=2}Estado
 
 typedef struct Proceso
 {
-	long int PID;
+	long int pid;
     int tamano;
     int tiempo;
     Estado estado;
