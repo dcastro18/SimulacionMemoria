@@ -1,0 +1,1034 @@
+
+Thread 140681975994112. --> Asignando 2 páginas de memoria.  --> Wed May 18 01:57:29 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Asignación finalizada con éxito. --> Wed May 18 01:57:29 2022
+	Esperando 60 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 6 páginas de memoria.  --> Wed May 18 01:58:03 2022
+
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Asignación finalizada con éxito. --> Wed May 18 01:58:03 2022
+	Esperando 40 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 2 páginas de memoria.  --> Wed May 18 01:58:29 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 01:58:29 2022
+
+Thread 140681975994112. --> Asignando 3 páginas de memoria.  --> Wed May 18 01:58:37 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 8 asignada
+	Asignación finalizada con éxito. --> Wed May 18 01:58:37 2022
+	Esperando 56 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 6 páginas de memoria.  --> Wed May 18 01:58:43 2022
+
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 01:58:43 2022
+
+Thread 140681967601408. --> Asignando 1 páginas de memoria.  --> Wed May 18 01:59:11 2022
+
+	Página 2 asignada
+	Asignación finalizada con éxito. --> Wed May 18 01:59:11 2022
+	Esperando 34 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 3 páginas de memoria.  --> Wed May 18 01:59:33 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 8 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 01:59:33 2022
+
+Thread 140681975994112. --> Asignando 7 páginas de memoria.  --> Wed May 18 01:59:45 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Asignación finalizada con éxito. --> Wed May 18 01:59:45 2022
+	Esperando 21 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 1 páginas de memoria.  --> Wed May 18 01:59:45 2022
+
+	Página 2 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 01:59:45 2022
+
+Thread 140681975994112. --> Desasignando 7 páginas de memoria.  --> Wed May 18 02:00:06 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:00:06 2022
+
+Thread 140681975994112. --> Asignando 3 páginas de memoria.  --> Wed May 18 02:00:19 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:00:19 2022
+	Esperando 36 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 6 páginas de memoria.  --> Wed May 18 02:00:53 2022
+
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:00:53 2022
+	Esperando 46 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 3 páginas de memoria.  --> Wed May 18 02:00:55 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:00:55 2022
+
+Thread 140681975994112. --> Asignando 5 páginas de memoria.  --> Wed May 18 02:01:27 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:01:27 2022
+	Esperando 56 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 6 páginas de memoria.  --> Wed May 18 02:01:39 2022
+
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:01:39 2022
+
+Thread 140681967601408. --> Asignando 3 páginas de memoria.  --> Wed May 18 02:02:01 2022
+
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:02:01 2022
+	Esperando 34 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 5 páginas de memoria.  --> Wed May 18 02:02:23 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:02:23 2022
+
+Thread 140681975994112. --> Asignando 3 páginas de memoria.  --> Wed May 18 02:02:35 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:02:35 2022
+	Esperando 29 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 3 páginas de memoria.  --> Wed May 18 02:02:35 2022
+
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:02:35 2022
+
+Thread 140681975994112. --> Desasignando 3 páginas de memoria.  --> Wed May 18 02:03:04 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:03:04 2022
+
+Thread 140681975994112. --> Asignando 2 páginas de memoria.  --> Wed May 18 02:03:09 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:03:09 2022
+	Esperando 41 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 3 páginas de memoria.  --> Wed May 18 02:03:43 2022
+
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:03:43 2022
+	Esperando 40 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 2 páginas de memoria.  --> Wed May 18 02:03:50 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:03:50 2022
+
+Thread 140681975994112. --> Asignando 3 páginas de memoria.  --> Wed May 18 02:04:17 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 5 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:04:17 2022
+	Esperando 24 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 3 páginas de memoria.  --> Wed May 18 02:04:23 2022
+
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:04:23 2022
+
+Thread 140681975994112. --> Desasignando 3 páginas de memoria.  --> Wed May 18 02:04:41 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 5 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:04:41 2022
+
+Thread 140681975994112. --> Asignando 10 páginas de memoria.  --> Wed May 18 02:04:51 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:04:51 2022
+	Esperando 58 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 7 páginas de memoria.  --> Wed May 18 02:05:25 2022
+
+	Página 10 asignada
+	Página 11 asignada
+	Página 12 asignada
+	Página 13 asignada
+	Página 14 asignada
+	Página 15 asignada
+	Página 16 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:05:25 2022
+	Esperando 51 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 10 páginas de memoria.  --> Wed May 18 02:05:49 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:05:49 2022
+
+Thread 140681975994112. --> Asignando 1 páginas de memoria.  --> Wed May 18 02:05:59 2022
+
+	Página 0 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:05:59 2022
+	Esperando 49 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 7 páginas de memoria.  --> Wed May 18 02:06:16 2022
+
+	Página 10 desasignada
+	Página 11 desasignada
+	Página 12 desasignada
+	Página 13 desasignada
+	Página 14 desasignada
+	Página 15 desasignada
+	Página 16 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:06:16 2022
+
+Thread 140681967601408. --> Asignando 10 páginas de memoria.  --> Wed May 18 02:06:33 2022
+
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:06:33 2022
+	Esperando 23 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 1 páginas de memoria.  --> Wed May 18 02:06:48 2022
+
+	Página 0 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:06:48 2022
+
+Thread 140681967601408. --> Desasignando 10 páginas de memoria.  --> Wed May 18 02:06:56 2022
+
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:06:56 2022
+
+Thread 140681967601408. --> Asignando 2 páginas de memoria.  --> Wed May 18 02:07:07 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:07:07 2022
+	Esperando 54 segundos para liberar memoria
+
+Thread 140681975994112. --> Asignando 9 páginas de memoria.  --> Wed May 18 02:07:41 2022
+
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:07:41 2022
+	Esperando 33 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 2 páginas de memoria.  --> Wed May 18 02:08:01 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:08:01 2022
+
+Thread 140681975994112. --> Desasignando 9 páginas de memoria.  --> Wed May 18 02:08:14 2022
+
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:08:14 2022
+
+Thread 140681975994112. --> Asignando 4 páginas de memoria.  --> Wed May 18 02:08:15 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:08:15 2022
+	Esperando 35 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 6 páginas de memoria.  --> Wed May 18 02:08:49 2022
+
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:08:49 2022
+	Esperando 48 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 4 páginas de memoria.  --> Wed May 18 02:08:50 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:08:50 2022
+
+Thread 140681975994112. --> Asignando 10 páginas de memoria.  --> Wed May 18 02:09:23 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 10 asignada
+	Página 11 asignada
+	Página 12 asignada
+	Página 13 asignada
+	Página 14 asignada
+	Página 15 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:09:23 2022
+	Esperando 21 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 6 páginas de memoria.  --> Wed May 18 02:09:37 2022
+
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:09:37 2022
+
+Thread 140681975994112. --> Desasignando 10 páginas de memoria.  --> Wed May 18 02:09:44 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 10 desasignada
+	Página 11 desasignada
+	Página 12 desasignada
+	Página 13 desasignada
+	Página 14 desasignada
+	Página 15 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:09:44 2022
+
+Thread 140681975994112. --> Asignando 8 páginas de memoria.  --> Wed May 18 02:09:57 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:09:57 2022
+	Esperando 37 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 6 páginas de memoria.  --> Wed May 18 02:10:31 2022
+
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Página 11 asignada
+	Página 12 asignada
+	Página 13 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:10:31 2022
+	Esperando 45 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 8 páginas de memoria.  --> Wed May 18 02:10:34 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:10:34 2022
+
+Thread 140681975994112. --> Asignando 9 páginas de memoria.  --> Wed May 18 02:11:05 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 14 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:11:05 2022
+	Esperando 24 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 6 páginas de memoria.  --> Wed May 18 02:11:16 2022
+
+	Página 8 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Página 11 desasignada
+	Página 12 desasignada
+	Página 13 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:11:16 2022
+
+Thread 140681975994112. --> Desasignando 9 páginas de memoria.  --> Wed May 18 02:11:29 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 14 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:11:29 2022
+
+Thread 140681975994112. --> Asignando 7 páginas de memoria.  --> Wed May 18 02:11:39 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:11:39 2022
+	Esperando 48 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 8 páginas de memoria.  --> Wed May 18 02:12:13 2022
+
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Página 11 asignada
+	Página 12 asignada
+	Página 13 asignada
+	Página 14 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:12:13 2022
+	Esperando 42 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 7 páginas de memoria.  --> Wed May 18 02:12:27 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:12:27 2022
+
+Thread 140681975994112. --> Asignando 2 páginas de memoria.  --> Wed May 18 02:12:47 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:12:47 2022
+	Esperando 24 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 8 páginas de memoria.  --> Wed May 18 02:12:55 2022
+
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Página 11 desasignada
+	Página 12 desasignada
+	Página 13 desasignada
+	Página 14 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:12:55 2022
+
+Thread 140681975994112. --> Desasignando 2 páginas de memoria.  --> Wed May 18 02:13:11 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:13:11 2022
+
+Thread 140681975994112. --> Asignando 9 páginas de memoria.  --> Wed May 18 02:13:21 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:13:21 2022
+	Esperando 58 segundos para liberar memoria
+
+Thread 140681967601408. --> Asignando 1 páginas de memoria.  --> Wed May 18 02:13:55 2022
+
+	Página 9 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:13:55 2022
+	Esperando 36 segundos para liberar memoria
+
+Thread 140681975994112. --> Desasignando 9 páginas de memoria.  --> Wed May 18 02:14:19 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:14:19 2022
+
+Thread 140681975994112. --> Asignando 5 páginas de memoria.  --> Wed May 18 02:14:29 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Asignación finalizada con éxito. --> Wed May 18 02:14:29 2022
+	Esperando 24 segundos para liberar memoria
+
+Thread 140681967601408. --> Desasignando 1 páginas de memoria.  --> Wed May 18 02:14:31 2022
+
+	Página 9 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:14:31 2022
+
+Thread 140681975994112. --> Desasignando 5 páginas de memoria.  --> Wed May 18 02:14:53 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 02:14:53 2022
+
+Thread 140380255028992. --> Asignando 4 segmentos de memoria.  --> Wed May 18 21:09:54 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Segmento 4 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:09:54 2022
+	Esperando 32 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 4 segmentos de memoria.  --> Wed May 18 21:09:58 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Segmento 6 desasignado
+	Segmento 7 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:09:58 2022
+
+Thread 140380255028992. --> Asignando 5 segmentos de memoria.  --> Wed May 18 21:10:47 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Segmento 4 asignado
+	Segmento 5 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:10:47 2022
+	Esperando 55 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 5 segmentos de memoria.  --> Wed May 18 21:10:51 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Segmento 6 desasignado
+	Segmento 7 desasignado
+	Segmento 8 desasignado
+	Segmento 9 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:10:51 2022
+
+Thread 140380255028992. --> Asignando 2 segmentos de memoria.  --> Wed May 18 21:11:40 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:11:40 2022
+	Esperando 27 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 2 segmentos de memoria.  --> Wed May 18 21:11:44 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:11:44 2022
+
+Thread 140380255028992. --> Asignando 3 segmentos de memoria.  --> Wed May 18 21:12:33 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:12:33 2022
+	Esperando 22 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 3 segmentos de memoria.  --> Wed May 18 21:12:37 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:12:37 2022
+
+Thread 140380255028992. --> Asignando 4 segmentos de memoria.  --> Wed May 18 21:13:26 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Segmento 4 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:13:26 2022
+	Esperando 30 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 4 segmentos de memoria.  --> Wed May 18 21:13:30 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Segmento 6 desasignado
+	Segmento 7 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:13:30 2022
+
+Thread 140380255028992. --> Asignando 1 segmentos de memoria.  --> Wed May 18 21:14:19 2022
+
+	Segmento 1 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:14:19 2022
+	Esperando 36 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 1 segmentos de memoria.  --> Wed May 18 21:14:23 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:14:23 2022
+
+Thread 140380255028992. --> Asignando 5 segmentos de memoria.  --> Wed May 18 21:15:12 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Segmento 4 asignado
+	Segmento 5 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:15:12 2022
+	Esperando 35 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 5 segmentos de memoria.  --> Wed May 18 21:15:16 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Segmento 6 desasignado
+	Segmento 7 desasignado
+	Segmento 8 desasignado
+	Segmento 9 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:15:16 2022
+
+Thread 140380255028992. --> Asignando 1 segmentos de memoria.  --> Wed May 18 21:16:05 2022
+
+	Segmento 1 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:16:05 2022
+	Esperando 55 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 1 segmentos de memoria.  --> Wed May 18 21:16:09 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:16:09 2022
+
+Thread 140380255028992. --> Asignando 4 segmentos de memoria.  --> Wed May 18 21:16:58 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Segmento 4 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:16:58 2022
+	Esperando 41 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 4 segmentos de memoria.  --> Wed May 18 21:17:02 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:17:02 2022
+
+Thread 140380255028992. --> Asignando 2 segmentos de memoria.  --> Wed May 18 21:17:51 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:17:51 2022
+	Esperando 58 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 2 segmentos de memoria.  --> Wed May 18 21:17:55 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:17:55 2022
+
+Thread 140380255028992. --> Asignando 3 segmentos de memoria.  --> Wed May 18 21:18:44 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:18:44 2022
+	Esperando 57 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 3 segmentos de memoria.  --> Wed May 18 21:18:48 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:18:48 2022
+
+Thread 140380255028992. --> Asignando 2 segmentos de memoria.  --> Wed May 18 21:19:37 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:19:37 2022
+	Esperando 57 segundos para liberar memoria
+
+Thread 140380255028992. --> Desasignando 2 segmentos de memoria.  --> Wed May 18 21:19:41 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:19:41 2022
+
+Thread 140155864925952. --> Asignando 3 segmentos de memoria.  --> Wed May 18 21:20:39 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:20:39 2022
+	Esperando 34 segundos para liberar memoria
+
+Thread 140155864925952. --> Desasignando 3 segmentos de memoria.  --> Wed May 18 21:20:43 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:20:43 2022
+
+Thread 140155864925952. --> Asignando 3 segmentos de memoria.  --> Wed May 18 21:21:20 2022
+
+	Segmento 1 asignado
+	Segmento 2 asignado
+	Segmento 3 asignado
+	Asignación finalizada con éxito. --> Wed May 18 21:21:20 2022
+	Esperando 42 segundos para liberar memoria
+
+Thread 140155864925952. --> Desasignando 3 segmentos de memoria.  --> Wed May 18 21:21:24 2022
+
+	Segmento 0 desasignado
+	Segmento 1 desasignado
+	Segmento 2 desasignado
+	Segmento 3 desasignado
+	Segmento 4 desasignado
+	Segmento 5 desasignado
+	Segmento 6 desasignado
+	Segmento 7 desasignado
+	Segmento 8 desasignado
+	Desasignación finalizada con éxito. --> Wed May 18 21:21:24 2022
+
+Thread 140188945291008. --> Asignando 1 páginas de memoria.  --> Wed May 18 21:22:08 2022
+
+	Página 0 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:22:08 2022
+	Esperando 57 segundos para liberar memoria
+
+Thread 140188936898304. --> Asignando 9 páginas de memoria.  --> Wed May 18 21:23:00 2022
+
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:23:00 2022
+	Esperando 24 segundos para liberar memoria
+
+Thread 140188945291008. --> Desasignando 1 páginas de memoria.  --> Wed May 18 21:23:05 2022
+
+	Página 0 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:23:05 2022
+
+Thread 140188936898304. --> Desasignando 9 páginas de memoria.  --> Wed May 18 21:23:24 2022
+
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:23:24 2022
+
+Thread 140188936898304. --> Asignando 10 páginas de memoria.  --> Wed May 18 21:23:52 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:23:52 2022
+	Esperando 41 segundos para liberar memoria
+
+Thread 140188936898304. --> Desasignando 10 páginas de memoria.  --> Wed May 18 21:24:33 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:24:33 2022
+
+Thread 140188936898304. --> Asignando 6 páginas de memoria.  --> Wed May 18 21:24:44 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:24:44 2022
+	Esperando 31 segundos para liberar memoria
+
+Thread 140188936898304. --> Desasignando 6 páginas de memoria.  --> Wed May 18 21:25:15 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:25:15 2022
+
+Thread 140188936898304. --> Asignando 3 páginas de memoria.  --> Wed May 18 21:25:36 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:25:36 2022
+	Esperando 38 segundos para liberar memoria
+
+Thread 140188936898304. --> Desasignando 3 páginas de memoria.  --> Wed May 18 21:26:14 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:26:14 2022
+
+Thread 140188936898304. --> Asignando 6 páginas de memoria.  --> Wed May 18 21:26:28 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:26:28 2022
+	Esperando 60 segundos para liberar memoria
+
+Thread 140188945291008. --> Asignando 7 páginas de memoria.  --> Wed May 18 21:27:20 2022
+
+	Página 6 asignada
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Página 11 asignada
+	Página 12 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:27:20 2022
+	Esperando 45 segundos para liberar memoria
+
+Thread 140188936898304. --> Desasignando 6 páginas de memoria.  --> Wed May 18 21:27:28 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:27:28 2022
+
+Thread 140188945291008. --> Desasignando 7 páginas de memoria.  --> Wed May 18 21:28:05 2022
+
+	Página 6 desasignada
+	Página 7 desasignada
+	Página 8 desasignada
+	Página 9 desasignada
+	Página 10 desasignada
+	Página 11 desasignada
+	Página 12 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:28:05 2022
+
+Thread 140188945291008. --> Asignando 7 páginas de memoria.  --> Wed May 18 21:28:12 2022
+
+	Página 0 asignada
+	Página 1 asignada
+	Página 2 asignada
+	Página 3 asignada
+	Página 4 asignada
+	Página 5 asignada
+	Página 6 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:28:12 2022
+	Esperando 59 segundos para liberar memoria
+
+Thread 140188936898304. --> Asignando 4 páginas de memoria.  --> Wed May 18 21:29:04 2022
+
+	Página 7 asignada
+	Página 8 asignada
+	Página 9 asignada
+	Página 10 asignada
+	Asignación finalizada con éxito. --> Wed May 18 21:29:04 2022
+	Esperando 60 segundos para liberar memoria
+
+Thread 140188945291008. --> Desasignando 7 páginas de memoria.  --> Wed May 18 21:29:11 2022
+
+	Página 0 desasignada
+	Página 1 desasignada
+	Página 2 desasignada
+	Página 3 desasignada
+	Página 4 desasignada
+	Página 5 desasignada
+	Página 6 desasignada
+	Desasignación finalizada con éxito. --> Wed May 18 21:29:11 2022
