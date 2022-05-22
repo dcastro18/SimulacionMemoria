@@ -4,7 +4,7 @@
 #include <sys/shm.h>
 
 //#include "linea.h"
-#include "proceso.h"
+#include "proceso_paginacion.h"
 
 int main()
 {

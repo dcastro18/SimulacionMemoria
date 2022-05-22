@@ -21,12 +21,12 @@ void crearBitacora(){
 
 int main()
 {
-    int cant_pags = 0;
-    while(cant_pags <= 0){
-        printf("Ingrese el número de paginas: ");
-        scanf("%d", &cant_pags);
+    int espacios = 0;
+    while(espacios <= 0){
+        printf("Ingrese el número de paginas o espacios de memoria: ");
+        scanf("%d", &espacios);
 
-        if(cant_pags <= 0){
+        if(espacios <= 0){
             printf("Por favor, ingrese un número positivo.\n\n");
         }
     }
@@ -58,7 +58,7 @@ int main()
         if(readyqueue_mem == (void *)-1 || control_mem == (void *)-1){
             printf("No se puede apuntar a la memoria compartida\n");
         }else{
-            control_mem[0] = cant_pags;   //cantidad de paginas de la memoria compartida
+            control_mem[0] = espacios;   //cantidad de espacios disponibles de la memoria compartida
             control_mem[1] = 1;             //el programa corre
             control_mem[2] = 0;             //cantidad de procesos
             control_mem[3] = 0;             // cantidad de proceso creados
