@@ -9,36 +9,36 @@
 int main()
 {
     //crea la llave
-    key_t llave_mem, llave_control, llave_estados;
-    llave_mem = ftok(".",'x');
+    key_t readyqueque_mem, llave_control, llave_procesos;
+    readyqueque_mem = ftok(".",'x');
     llave_control = ftok(".",'a');
-    llave_estados = ftok(".",'b');
+    llave_procesos = ftok(".",'b');
 
     // shmget me retorna el identificador de la memoria compartida, si existe
-    int mem_id = shmget(llave_mem, 0, 0666);
+    int ready_id = shmget(readyqueque_mem, 0, 0666);
     int control_id = shmget(llave_control, 0, 0666);
-    int estados_id = shmget(llave_estados, 0, 0666);
+    int procesos_id = shmget(llave_procesos, 0, 0666);
 
-    if(mem_id == -1 || control_id == -1 || estados_id == -1){
+    if(ready_id == -1 || control_id == -1 || procesos_id == -1){
         printf("No hay acceso a la memoria compartida\n");
     }else{
         // shmat se pega a la memoria compartida
-        Proceso * mem_address = (Proceso *) shmat(mem_id, (void*)0, 0);
-        int * control_address = (int*) shmat(control_id, (void*)0, 0);
-        Proceso * estados_address = (Proceso *) shmat(estados_id, (void*)0, 0);
+        Proceso * mem_address = (Proceso *) shmat(ready_id, (void*)0, 0);
+        int * control_mem = (int*) shmat(control_id, (void*)0, 0);
+        Proceso * procesos_address = (Proceso *) shmat(procesos_id, (void*)0, 0);
 
-        if(mem_address == (void*)-1 || control_address == (void*)-1 
-            || estados_address == (void*)-1){
+        if(mem_address == (void*)-1 || control_mem == (void*)-1 
+            || procesos_address == (void*)-1){
             printf("No se puede apuntar a la memoria compartida\n");
         }else{
-            int cant_lineas = control_address[0];
+            int cant_lineas = control_mem[0];
 
             printf("======= Procesos vivos ========\n");
             printf("PID                 Estado\n");
             printf("-------------------------------\n");
-            for(int i=0; i<control_address[2]; i++){
-                printf("%-20ld", estados_address[i].pid);
-                switch(estados_address[i].estado){
+            for(int i=0; i<control_mem[2]; i++){
+                printf("%-20ld", procesos_address[i].pid);
+                switch(procesos_address[i].estado){
                     case Fuera:
                         printf("Fuera");
                         break;
@@ -74,8 +74,8 @@ int main()
 
             //se despega de la memoria compartida
             shmdt(mem_address);
-            shmdt(control_address);
-            shmdt(estados_address);
+            shmdt(control_mem);
+            shmdt(procesos_address);
         }
     }
 
