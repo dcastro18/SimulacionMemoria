@@ -1,0 +1,4 @@
+22/05/2022 13:49:33: Proceso: Asignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, 7, 8, -1].
+22/05/2022 13:49:52: Proceso: Asignación. PID: 2. Filas Ocupadas:[9, 10, 11, 12, 13, -1, -1, -1, -1, -1].
+22/05/2022 13:50:00: Proceso: Desasignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, 7, 8, -1].
+22/05/2022 13:50:08: Proceso: Asignación. PID: 3. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, -1, -1, -1].

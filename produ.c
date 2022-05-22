@@ -11,20 +11,14 @@
 #include <stdio.h>
 
 
-#include "proceso_paginacion.h"
-#include "proceso_segmentacion.h"
+#include "proceso.h"
 
 
 // Variables globales
-
-int * control_mem;
-Proceso_Paginacion * procesos_mem_pag;
-Proceso_Segmentacion * procesos_mem_seg;
-
-Proceso_Paginacion * readyQueue_mem_pag;
-Proceso_Segmentacion * readyQueue_mem_seg;
-
-sem_t sem_ready, sem_procesos;
+Proceso * mem_address;
+int * control_address;
+Proceso * estados_address;
+sem_t sem_ready, sem_estados;
 
 // Auxiliar para obtener la cantidad de procesos en el Queue
 int getQueueSize(int queue[10]) {
@@ -36,6 +30,7 @@ int getQueueSize(int queue[10]) {
         }
         else
             counter++;
+
     }
     return counter;
 }
@@ -74,40 +69,19 @@ int getRandom(int min, int max){
     Agrega un proceso a la memoria de procesos vivos
     Retorna la posición donde lo metió
 */
-int agregarProcesoPag(Proceso_Paginacion * proceso){
+int agregarProceso(Proceso * proceso){
     // pide el semáforo
-    sem_wait(&sem_procesos);
+    sem_wait(&sem_estados);
 
-    int pos = control_mem[2];                   //cantidad de procesos vivos
-    procesos_mem_pag[pos].pid = proceso->pid;
-    procesos_mem_pag[pos].espacios = proceso->espacios;
-    procesos_mem_pag[pos].tiempo = proceso->tiempo;
+    int pos = control_address[2];                   //cantidad de procesos vivos
+    estados_address[pos].pid = proceso->pid;
+    estados_address[pos].cant_pags = proceso->cant_pags;
+    estados_address[pos].tiempo = proceso->tiempo;
     
-    control_mem[2] = control_mem[2] + 1;    //incremento el contador de procesos vivos
+    control_address[2] = control_address[2] + 1;    //incremento el contador de procesos vivos
 
     // devuelve el semáforo
-    sem_post(&sem_procesos);
-
-    return pos;
-}
-
-int agregarProcesoSeg(Proceso_Segmentacion * proceso){
-    // pide el semáforo
-    sem_wait(&sem_procesos);
-
-    int pos = control_mem[2];                   //cantidad de procesos vivos
-    procesos_mem_seg[pos].pid = proceso->pid;
-    //procesos_mem_seg[pos].segmentos = proceso->segmentos;
-    for (int i = 0; i < 10 ; ++i){
-        procesos_mem_seg[pos].segmentos[i] = proceso->segmentos[i];
-    }
-    
-    procesos_mem_seg[pos].tiempo = proceso->tiempo;
-
-    control_mem[2] = control_mem[2] + 1;    //incremento el contador de procesos vivos
-
-    // devuelve el semáforo
-    sem_post(&sem_procesos);
+    sem_post(&sem_estados);
 
     return pos;
 }
@@ -117,19 +91,19 @@ int agregarProcesoSeg(Proceso_Segmentacion * proceso){
 */
 void eliminarProceso(long int idProceso){
     // pide el semáforo
-    sem_wait(&sem_procesos);
+    sem_wait(&sem_estados);
 
     int pos=0;
-    while(procesos_mem_pag[pos].pid != idProceso)
+    while(estados_address[pos].pid != idProceso)
         pos++;
 
-    for(int i=pos; i<(control_mem[2]-1); i++)
-        procesos_mem_pag[i] = procesos_mem_pag[i+1];
+    for(int i=pos; i<(control_address[2]-1); i++)
+        estados_address[i] = estados_address[i+1];
 
-    control_mem[2] = control_mem[2] - 1;
+    control_address[2] = control_address[2] - 1;
 
     // devuelve el semáforo
-    sem_post(&sem_procesos);
+    sem_post(&sem_estados);
 }
 
 
@@ -155,7 +129,7 @@ void escBitacora(const char *texto){
 
 
 //============================================================
-//          ALGORITMOS DE PAGINACION Y SEGMENTACION
+//          ALGORITMOS DE ProcesoCION Y SEGMENTACION
 //============================================================
 
 /*
@@ -165,20 +139,21 @@ void * asignarEspacio_Paginacion(void * arg){
     
     struct Proceso * temp;
     temp = (struct Proceso *)arg;
-    temp->pid = control_mem[3];
+    temp->pid = control_address[3];
 
     // agrego el proceso actual a los procesos vivos
-    int pos_proceso = agregarProcesoPag(temp);
+    int pos_estado = agregarProceso(temp);
     //guardo los valores para accederlos más facil
-    int cant_pags_proceso = procesos_mem_pag[pos_proceso].espacios;
-    int tiempo = procesos_mem_pag[pos_proceso].tiempo;
-    long int pid = procesos_mem_pag[pos_proceso].pid;
-    procesos_mem_pag[pos_proceso].estado = Bloqueado;
+    int cant_pags_proceso = estados_address[pos_estado].cant_pags;
+    int tiempo = estados_address[pos_estado].tiempo;
+    long int pid = estados_address[pos_estado].pid;
+    estados_address[pos_estado].estado = Bloqueado;
 
     //printf("Bloqueado... ");
     sleep(1);      //para notarlo en el espia ¡NO BORRAR!
 
     int pos = 0;
+    bool ocupado;
     bool asignado = false;
 
     // Array de rastreo de paginas
@@ -187,7 +162,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
     // pide el semáforo
     sem_wait(&sem_ready);
-    procesos_mem_pag[pos_proceso].estado = RegionCritica;
+    estados_address[pos_estado].estado = RegionCritica;
 
     //printf("RC... ");
     sleep(1);         //para notarlo en el espia ¡NO BORRAR!
@@ -195,14 +170,18 @@ void * asignarEspacio_Paginacion(void * arg){
     //Valores para la bitácora
     char resultado[100];
 
- 
+
+    // control_address[0] = cantidad de lineas
+    ocupado = false;
+    // para saltar más rapido las que estan ocupadas
+    //while(mem_address[pos].pid != -1)
+        //pos++;
     // Tamanho restante del tamanho original
     int tamanoRestante = cant_pags_proceso; // Ir restando el tamano restante con los espacios libres y si al final del for no es cero, se mata el proceso.
-    int cant_pags_mem = control_mem[0];
-    bool ocupado = false;
+    int cant_pags_mem = control_address[0];
     for(int i=0; i < cant_pags_mem; i++){
 
-       if(readyQueue_mem_pag[i].pid == -1){
+       if(mem_address[i].pid == -1){
             ocupado = false;    
             tamanoRestante--;
             if (tamanoRestante == 0)
@@ -216,13 +195,15 @@ void * asignarEspacio_Paginacion(void * arg){
         for(int i=0; i < cant_pags_mem; i++){
             // Solo en los espacios que esten vacios
             if (counter < cant_pags_proceso){
-                if(readyQueue_mem_pag[i].pid == -1){
-                    readyQueue_mem_pag[i] = procesos_mem_pag[pos_proceso];
+                if(mem_address[i].pid == -1){
+                    mem_address[i] = estados_address[pos_estado];
                     bitacoraPaginas[counter] = i;
                     counter++;   
                 }
 
             }
+            
+            
         }
         asignado = true;
     }
@@ -238,7 +219,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
         // 4 Devuelve el semáforo
         sem_post(&sem_ready);
-        procesos_mem_pag[pos_proceso].estado = Ejecutando;
+        estados_address[pos_estado].estado = Ejecutando;
         
 	   // 5 Sleep
         //sleep(1);//para notarlo en el espia ¡NO BORRAR!
@@ -262,7 +243,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
         for(int i=0; i<10; i++){
             if (bitacoraPaginas[i] != -1){
-                readyQueue_mem_pag[bitacoraPaginas[i]].pid = -1;
+                mem_address[bitacoraPaginas[i]].pid = -1;
             }
             
         }
@@ -284,293 +265,96 @@ void * asignarEspacio_Paginacion(void * arg){
     return NULL;
 }
 
-
 /*
      Algoritmo Segmentacion
-*/
-/*
-void * asignarEspacio_Segmentacion(void * arg){
-
-    struct Proceso_Segmentacion * temp;
-    temp = (struct Proceso_Segmentacion *)arg;
-    temp->pid = control_mem[3];
-
-    // agrego el proceso actual a los procesos vivos
-
-    int pos_proceso = agregarProcesoSeg(temp);
-    //guardo los valores para accederlos más facil
-
-    int segmentos_proceso[] = procesos_mem_seg[pos_proceso].segmentos;
-    int tiempo = procesos_mem_seg[pos_proceso].tiempo;
-    long int pid = procesos_mem_seg[pos_proceso].pid;
-    procesos_mem_seg[pos_proceso].estado = Bloqueado;
-
-    //printf("Bloqueado... ");
-    sleep(1);      //para notarlo en el espia ¡NO BORRAR!
-
-    int pos = 0;
-    bool ocupado;
-    bool asignado = false;
-
-    // Array de rastreo de paginas
-
-    int bitacoraPaginas[10] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
-
-    // pide el semáforo
-    sem_wait(&sem_ready);
-    procesos_mem[pos_estado].estado = RegionCritica;
-
-    //printf("RC... ");
-    sleep(1);         //para notarlo en el espia ¡NO BORRAR!
-
-    //Valores para la bitácora
-    char resultado[100];
-
-
-    int cant_segmentos_proceso = sizeof(segmentos_proceso)/sizeof(segmentos_proceso[0]);
-
-    for(int i = 0;i<cant_segmentos_proceso;i++ ) {
-        int tamano = segmentos_proceso[i];
-
-        while(pos <= (control_address[0] - tamano)){        // control_address[0] = cantidad de lineas
-            ocupado = false;
-            // para saltar más rapido las que estan ocupadas
-            while(mem_address[pos].pid != -1)
-                pos++;
-
-            for(int i=pos; i<(pos + tamano); i++){
-                if(mem_address[i].pid != -1){
-                    ocupado = true;
-                    pos = i + 1;
-                    break;
-                }
-            }
-
-            if(!ocupado && (pos <= control_address[0] - tamano)){
-                asignado = true;
-                break;
-            }
-        }
-        if(ocupado) {
-            break;
-        }
-        pos = 0;
-
-    }
-    if(!ocupado) {
-        for(int i = 0;i<cant_segmentos_proceso;i++ ) {
-            int tamano = segmentos_proceso[i];
-            while(pos <= (control_address[0] - tamano)){        // control_address[0] = cantidad de lineas
-                ocupado = false;
-
-                // para saltar más rapido las que estan ocupadas
-                while(mem_address[pos].pid != -1)
-                    pos++;
-
-                for(int i=pos; i<(pos + tamano); i++){
-                    if(mem_address[i].pid != -1){
-                        ocupado = true;
-                        pos = i + 1;
-                        break;
-                    }
-                }
-
-                if(!ocupado && (pos <= control_address[0] - tamano)){
-                    for(int i=pos; i<(pos + tamano); i++){
-                        readyQueue_mem_seg[i] = procesos_mem_seg[pos_estado];
-                    }
-                    asignado = true;
-                    break;
-                }
-            }
-            pos = 0;
-
-        }
-
-    }
-    // Ya aca estan los segmentos asigados hay que meter a la bitacora
-
-    if(asignado){
-        // 3 Escribe en la bitácora
-        // Convierte array a string
-        char pag_usadas[255];
-        join(pag_usadas, sizeof pag_usadas, bitacoraPaginas, sizeof(bitacoraPaginas) / sizeof(*bitacoraPaginas));
-
-        sprintf(resultado, ": Proceso: Asignación. PID: %ld. Filas Ocupadas:%s.\n", pid, pag_usadas);
-        escBitacora(resultado);
-
-        // 4 Devuelve el semáforo
-        sem_post(&sem_ready);
-        procesos_mem[pos_estado].estado = Ejecutando;
-
-        // 5 Sleep
-        //sleep(1);//para notarlo en el espia ¡NO BORRAR!
-
-        printf("(Entró %ld: tamaño %d, tiempo %d)\n", pid, cant_pags_proceso, tiempo);
-
-        sleep(tiempo);
-
-        // 6 Pide el semáforo
-        sem_wait(&sem_ready);
-
-        // 8 Escribe en la bitácora
-        // Convierte array a string
-
-        join(pag_usadas, sizeof pag_usadas, bitacoraPaginas, sizeof(bitacoraPaginas) / sizeof(*bitacoraPaginas));
-
-        sprintf(resultado, ": Proceso: Desasignación. PID: %ld. Filas Ocupadas:%s.\n", pid, pag_usadas);
-        escBitacora(resultado);
-
-        // 7  Devuelve  memoria
-
-        for(int i=0; i<10; i++){
-            if (bitacoraPaginas[i] != -1){
-                readyQueue_mem[bitacoraPaginas[i]].pid = -1;
-            }
-
-        }
-
-    }else{
-        sprintf(resultado, ": Proceso: Muere. El hilo %ld de tamaño %d, murió. Motivo: No encontró espacio\n",
-                pid, cant_pags_proceso);
-        printf("-El hilo %ld de tamaño %d, murió porque no encontró espacio\n",
-               pid, cant_pags_proceso);
-        escBitacora(resultado);
-    }
-
-    // elimino el proceso actual de los procesos vivos
-    eliminarProceso(pid);
-
-    // devuelve el semáforo
-    sem_post(&sem_ready);
-
-    return NULL;
-}
 */
 
 
 int main()
 {
     //crea la llave
-    key_t llave_ready, llave_control, llave_procesos;
-    llave_ready = ftok(".",'x');
+    key_t llave_mem, llave_control, llave_estados;
+    llave_mem = ftok(".",'x');
     llave_control = ftok(".",'a');
-    llave_procesos = ftok(".",'b');
+    llave_estados = ftok(".",'b');
 
     // shmget me retorna el identificador de la memoria compartida, si existe
-    int ready_id = shmget(llave_ready, 0, 0666);
+    int mem_id = shmget(llave_mem, 0, 0666);
     int control_id = shmget(llave_control, 0, 0666);
-    int procesos_id = shmget(llave_procesos, 0, 0666);
+    int estados_id = shmget(llave_estados, 0, 0666);
 
-    if(ready_id == -1 || control_id == -1 || procesos_id == -1){
+    if(mem_id == -1 || control_id == -1 || estados_id == -1){
         printf("No hay acceso a la memoria compartida\n");
     }else{
+        // shmat se pega a la memoria compartida
+        mem_address = (Proceso*) shmat(mem_id, (void*) 0, 0);
+        control_address = (int*) shmat(control_id, (void*) 0, 0);
+        estados_address = (Proceso*) shmat(estados_id, (void*) 0, 0);
 
-        int algoritmo = 0;
-        while(algoritmo < 1 || algoritmo > 2){
-            printf("Algoritmos de asignación de memoria\n");
-            printf("  1) Paginacion\n");
-            printf("  2) Segmentacion\n");
-            printf("______________________________________\n");
-            printf("Seleccione el algoritmo a utilizar: ");
-            scanf("%d", &algoritmo);
+        if(mem_address == (void*)-1 || control_address == (void*)-1 
+            || estados_address == (void*)-1){
+            printf("No se puede apuntar a la memoria compartida\n");
+        }else{
 
-            if(algoritmo < 1 || algoritmo > 2){
-                printf("Por favor, ingrese una de las opciones.\n");
-            }
-            printf("\n");
-        }
+            int algoritmo = 0;
+            while(algoritmo < 1 || algoritmo > 2){
+                printf("Algoritmos de asignación de memoria\n");
+                printf("  1) Procesocion\n");
+                printf("  2) Segmentacion\n");
+                printf("______________________________________\n");
+                printf("Seleccione el algoritmo a utilizar: ");
+                scanf("%d", &algoritmo);
 
-        // inicializa el semáforo para hilos
-        sem_init(&sem_ready, 0, 1);
-        // inicializa el semáforo para los procesos
-        sem_init(&sem_procesos, 0, 1);
-
-        // Así debería comportarse, maomeno
-        while(control_mem[1] == 1){         //mientras la memoria esté viva
-
-
-
-            if(algoritmo == 1) {
-                // Algoritmo de Paginacion
-
-
-                // shmat se pega a la memoria compartida
-                readyQueue_mem_pag = (Proceso_Paginacion *) shmat(ready_id, (void*) 0, 0);
-                control_mem = (int*) shmat(control_id, (void*) 0, 0);
-                procesos_mem_pag = (Proceso_Paginacion*) shmat(procesos_id, (void*) 0, 0);
-
-                if(readyQueue_mem_pag == (void*)-1 || control_mem == (void*)-1
-                   || procesos_mem_pag == (void*)-1){
-                    printf("No se puede apuntar a la memoria compartida\n");
-                }else {
-                    pthread_t proceso;
-
-                    control_mem[3] = control_mem[3] + 1; // Suma de cantidad de procesos para mantener el PID
-
-                    struct Proceso_Paginacion info_proceso_pag;
-
-                    info_proceso_pag.espacios = getRandom(1, 10);
-                    info_proceso_pag.tiempo = getRandom(20, 60);
-                    pthread_create(&proceso, NULL, asignarEspacio_Paginacion, (void *) &info_proceso_pag);
+                if(algoritmo < 1 || algoritmo > 2){
+                    printf("Por favor, ingrese una de las opciones.\n");
                 }
-
-                // Algoritmo de Segmentacion
+                printf("\n");
             }
-            /*
-            else{
 
-                // shmat se pega a la memoria compartida
-                readyQueue_mem_seg = (Proceso_Segmentacion *) shmat(ready_id, (void*) 0, 0);
-                control_mem = (int*) shmat(control_id, (void*) 0, 0);
-                procesos_mem_seg = (Proceso_Segmentacion*) shmat(procesos_id, (void*) 0, 0);
+            // inicializa el semáforo para hilos
+            sem_init(&sem_ready, 0, 1);
+            // inicializa el semáforo para los estados
+            sem_init(&sem_estados, 0, 1);
 
-                if(readyQueue_mem == (void*)-1 || control_mem == (void*)-1
-                   || procesos_mem == (void*)-1){
-                    printf("No se puede apuntar a la memoria compartida\n");
-                }else {
-                    pthread_t proceso;
+            // Así debería comportarse, maomeno
+            while(control_address[1] == 1){         //mientras la memoria esté viva
+                
+                pthread_t proceso;
+                struct Proceso info_proceso_pag;
+                // Suma id
+                control_address[3] = control_address[3] + 1; // Suma de cantidad de procesos para mantener el PID
+                info_proceso_pag.cant_pags = getRandom(1, 10);
+                info_proceso_pag.tiempo = getRandom(20, 60);
 
-                    control_mem[3] = control_mem[3] + 1; // Suma de cantidad de procesos para mantener el PID
-
-                    struct Proceso_Segmentacion info_proceso_seg;
-
-                    int cant_segmentos = getRandom(1, 5);
-
-                    int segmentos[cant_segmentos];
-
-                    for(int = 0;i<cant_segmentos;i++)
-                    {
-                        int tamano_segmento = getRandom(1, 3);
-
-                        segmentos[i] = tamano_segmento;
-                    }
-                    info_proceso_seg.segmentos = segmentos;
-                    info_proceso_seg.tiempo = getRandom(20, 60);
-
-                    pthread_create(&proceso, NULL, asignarEspacio_Segmentacion, (void *)&info_proceso_seg);
+                switch(algoritmo){
+                    // Algoritmo de Paginacion
+                    case 1:
+                        pthread_create(&proceso, NULL, asignarEspacio_Paginacion, (void *)&info_proceso_pag);
+                        break;
+                    // Algoritmo de Segmentacion
+                    case 2:
+                        pthread_create(&proceso, NULL, asignarEspacio_Paginacion, (void *)&info_proceso_pag);
+                        break;
                 }
 
 
+                int espera = getRandom(15, 25);
+                printf("Nuevo hilo en %d segundos\n", espera);
+
+                sleep(espera);
             }
-            */
-            int espera = getRandom(15, 25);
-            printf("Nuevo hilo en %d segundos\n", espera);
 
-            sleep(espera);
+
+            // destruye los semáforos
+            sem_destroy(&sem_ready);
+            sem_destroy(&sem_estados);
+
+            //se despega de la memoria compartida
+            shmdt(mem_address);
+            shmdt(control_address);
+            shmdt(estados_address);
         }
-
-
-        // destruye los semáforos
-        sem_destroy(&sem_ready);
-        sem_destroy(&sem_procesos);
-
-        //se despega de la memoria compartida
-        shmdt(readyQueue_mem_pag);
-        shmdt(control_mem);
-        shmdt(readyQueue_mem_pag);
     }
-
 
 
     return 0;
