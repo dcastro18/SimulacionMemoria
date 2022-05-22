@@ -9,7 +9,8 @@ typedef struct Proceso
     int cant_pags; 
     int tiempo;
     Estado estado;
-    //int segmentos[10];
+    int seg[5];
+
 } Proceso;
 
 

@@ -67,6 +67,7 @@ int main()
                     printf("%-20s", "-");
                 }else{
                     printf("%-20ld", mem_address[i].pid);
+                   
                 }
 
                 printf("\n----------------------------\n");

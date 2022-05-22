@@ -45,9 +45,9 @@ int main()
 
 
     //Este código sirve como ejemplo para ver datos extra sobre la memoria compartida
-    /*struct shmid_ds shmid_ds;
+    struct shmid_ds shmid_ds;
     printf ("The segment size = %ld\n", shmid_ds.shm_segsz);
-    */
+    
 
     if(mem_id == -1 || control_id == -1 || estados_id == -1){
         printf("No se pudo crear la memoria compartida\n");
