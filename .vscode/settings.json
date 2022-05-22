@@ -5,7 +5,9 @@
         "semaphore.h": "c",
         "stdlib.h": "c",
         "proceso.h": "c",
-        "sem.h": "c"
+        "sem.h": "c",
+        "inicializador.h": "c",
+        "herramientas.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
