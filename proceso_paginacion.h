@@ -6,8 +6,9 @@
 typedef struct Proceso_Paginacion
 {
 	long int pid;
-    Proceso proceso;
-    int cant_pags;
+    int tiempo;
+    int espacios;
+    Estado estado;
 } Proceso_Paginacion;
 
 

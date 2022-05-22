@@ -79,9 +79,9 @@ int agregarProcesoPag(Proceso_Paginacion * proceso){
     sem_wait(&sem_procesos);
 
     int pos = control_mem[2];                   //cantidad de procesos vivos
-    procesos_mem[pos].pid = proceso->pid;
-    procesos_mem[pos].cant_pags = proceso->cant_pags;
-    procesos_mem[pos].tiempo = proceso->tiempo;
+    procesos_mem_pag[pos].pid = proceso->pid;
+    procesos_mem_pag[pos].espacios = proceso->espacios;
+    procesos_mem_pag[pos].tiempo = proceso->tiempo;
     
     control_mem[2] = control_mem[2] + 1;    //incremento el contador de procesos vivos
 
@@ -97,7 +97,11 @@ int agregarProcesoSeg(Proceso_Segmentacion * proceso){
 
     int pos = control_mem[2];                   //cantidad de procesos vivos
     procesos_mem_seg[pos].pid = proceso->pid;
-    procesos_mem_seg[pos].segmentos = proceso->segmentos;
+    //procesos_mem_seg[pos].segmentos = proceso->segmentos;
+    for (int i = 0; i < 10 ; ++i){
+        procesos_mem_seg[pos].segmentos[i] = proceso->segmentos[i];
+    }
+    
     procesos_mem_seg[pos].tiempo = proceso->tiempo;
 
     control_mem[2] = control_mem[2] + 1;    //incremento el contador de procesos vivos
@@ -116,11 +120,11 @@ void eliminarProceso(long int idProceso){
     sem_wait(&sem_procesos);
 
     int pos=0;
-    while(procesos_mem[pos].pid != idProceso)
+    while(procesos_mem_pag[pos].pid != idProceso)
         pos++;
 
     for(int i=pos; i<(control_mem[2]-1); i++)
-        procesos_mem[i] = procesos_mem[i+1];
+        procesos_mem_pag[i] = procesos_mem_pag[i+1];
 
     control_mem[2] = control_mem[2] - 1;
 
@@ -164,12 +168,12 @@ void * asignarEspacio_Paginacion(void * arg){
     temp->pid = control_mem[3];
 
     // agrego el proceso actual a los procesos vivos
-    int pos_proceso = agregarProceso(temp);
+    int pos_proceso = agregarProcesoPag(temp);
     //guardo los valores para accederlos más facil
-    int cant_pags_proceso = procesos_mem[pos_proceso].cant_pags;
-    int tiempo = procesos_mem[pos_proceso].tiempo;
-    long int pid = procesos_mem[pos_proceso].pid;
-    procesos_mem[pos_proceso].estado = Bloqueado;
+    int cant_pags_proceso = procesos_mem_pag[pos_proceso].espacios;
+    int tiempo = procesos_mem_pag[pos_proceso].tiempo;
+    long int pid = procesos_mem_pag[pos_proceso].pid;
+    procesos_mem_pag[pos_proceso].estado = Bloqueado;
 
     //printf("Bloqueado... ");
     sleep(1);      //para notarlo en el espia ¡NO BORRAR!
@@ -183,7 +187,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
     // pide el semáforo
     sem_wait(&sem_ready);
-    procesos_mem[pos_estado].estado = RegionCritica;
+    procesos_mem_pag[pos_proceso].estado = RegionCritica;
 
     //printf("RC... ");
     sleep(1);         //para notarlo en el espia ¡NO BORRAR!
@@ -195,9 +199,10 @@ void * asignarEspacio_Paginacion(void * arg){
     // Tamanho restante del tamanho original
     int tamanoRestante = cant_pags_proceso; // Ir restando el tamano restante con los espacios libres y si al final del for no es cero, se mata el proceso.
     int cant_pags_mem = control_mem[0];
+    bool ocupado = false;
     for(int i=0; i < cant_pags_mem; i++){
 
-       if(readyQueue_mem[i].pid == -1){
+       if(readyQueue_mem_pag[i].pid == -1){
             ocupado = false;    
             tamanoRestante--;
             if (tamanoRestante == 0)
@@ -211,8 +216,8 @@ void * asignarEspacio_Paginacion(void * arg){
         for(int i=0; i < cant_pags_mem; i++){
             // Solo en los espacios que esten vacios
             if (counter < cant_pags_proceso){
-                if(readyQueue_mem[i].pid == -1){
-                    readyQueue_mem[i] = procesos_mem[pos_estado];
+                if(readyQueue_mem_pag[i].pid == -1){
+                    readyQueue_mem_pag[i] = procesos_mem_pag[pos_proceso];
                     bitacoraPaginas[counter] = i;
                     counter++;   
                 }
@@ -233,7 +238,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
         // 4 Devuelve el semáforo
         sem_post(&sem_ready);
-        procesos_mem[pos_estado].estado = Ejecutando;
+        procesos_mem_pag[pos_proceso].estado = Ejecutando;
         
 	   // 5 Sleep
         //sleep(1);//para notarlo en el espia ¡NO BORRAR!
@@ -257,7 +262,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
         for(int i=0; i<10; i++){
             if (bitacoraPaginas[i] != -1){
-                readyQueue_mem[bitacoraPaginas[i]].pid = -1;
+                readyQueue_mem_pag[bitacoraPaginas[i]].pid = -1;
             }
             
         }
@@ -283,6 +288,7 @@ void * asignarEspacio_Paginacion(void * arg){
 /*
      Algoritmo Segmentacion
 */
+/*
 void * asignarEspacio_Segmentacion(void * arg){
 
     struct Proceso_Segmentacion * temp;
@@ -440,7 +446,7 @@ void * asignarEspacio_Segmentacion(void * arg){
 
     return NULL;
 }
-
+*/
 
 
 int main()
@@ -494,8 +500,8 @@ int main()
                 control_mem = (int*) shmat(control_id, (void*) 0, 0);
                 procesos_mem_pag = (Proceso_Paginacion*) shmat(procesos_id, (void*) 0, 0);
 
-                if(readyQueue_mem == (void*)-1 || control_mem == (void*)-1
-                   || procesos_mem == (void*)-1){
+                if(readyQueue_mem_pag == (void*)-1 || control_mem == (void*)-1
+                   || procesos_mem_pag == (void*)-1){
                     printf("No se puede apuntar a la memoria compartida\n");
                 }else {
                     pthread_t proceso;
@@ -504,13 +510,14 @@ int main()
 
                     struct Proceso_Paginacion info_proceso_pag;
 
-                    info_proceso_pag.cant_pags = getRandom(1, 10);
+                    info_proceso_pag.espacios = getRandom(1, 10);
                     info_proceso_pag.tiempo = getRandom(20, 60);
                     pthread_create(&proceso, NULL, asignarEspacio_Paginacion, (void *) &info_proceso_pag);
                 }
 
                 // Algoritmo de Segmentacion
             }
+            /*
             else{
 
                 // shmat se pega a la memoria compartida
@@ -546,7 +553,7 @@ int main()
 
 
             }
-
+            */
             int espera = getRandom(15, 25);
             printf("Nuevo hilo en %d segundos\n", espera);
 
@@ -559,11 +566,11 @@ int main()
         sem_destroy(&sem_procesos);
 
         //se despega de la memoria compartida
-        shmdt(readyQueue_mem);
+        shmdt(readyQueue_mem_pag);
         shmdt(control_mem);
-        shmdt(procesos_mem);
+        shmdt(readyQueue_mem_pag);
     }
-    }
+
 
 
     return 0;

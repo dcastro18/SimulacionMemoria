@@ -38,9 +38,9 @@ int main()
     llave_procesos = ftok(".",'b');
 
     // shmget retorna el identificador de la memoria compartida
-    int ready_id = shmget(llave_ready, cant_pags*sizeof(Proceso), 0666|IPC_CREAT);
+    int ready_id = shmget(llave_ready, espacios*sizeof(Proceso), 0666|IPC_CREAT);
     int control_id = shmget(llave_control, 2*sizeof(int), 0666|IPC_CREAT);
-    int procesos_id = shmget(llave_procesos, cant_pags*sizeof(Proceso), 0666|IPC_CREAT);
+    int procesos_id = shmget(llave_procesos, espacios*sizeof(Proceso), 0666|IPC_CREAT);
 
 
     //Este código sirve como ejemplo para ver datos extra sobre la memoria compartida
@@ -63,7 +63,7 @@ int main()
             control_mem[2] = 0;             //cantidad de procesos
             control_mem[3] = 0;             // cantidad de proceso creados
 
-            for(int i=0; i<cant_pags; i++){
+            for(int i=0; i<espacios; i++){
                 readyqueue_mem[i].pid = -1;
                 //readyqueue_mem[i].estado = -1;
             }
