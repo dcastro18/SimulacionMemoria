@@ -299,7 +299,7 @@ int main()
             int algoritmo = 0;
             while(algoritmo < 1 || algoritmo > 2){
                 printf("Algoritmos de asignación de memoria\n");
-                printf("  1) Procesocion\n");
+                printf("  1) Paginacion\n");
                 printf("  2) Segmentacion\n");
                 printf("______________________________________\n");
                 printf("Seleccione el algoritmo a utilizar: ");
