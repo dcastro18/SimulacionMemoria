@@ -8,7 +8,7 @@ typedef struct Proceso
 	long int pid;
     int cant_pags; 
     int tiempo;
-    int segmentos[5]; 
+    int segmentos[5];
     Estado estado;
 } Proceso;
 
