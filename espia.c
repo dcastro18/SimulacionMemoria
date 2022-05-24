@@ -3,7 +3,7 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
-//#include "linea.h"
+
 #include "proceso.h"
 
 int main()
@@ -23,12 +23,12 @@ int main()
         printf("No hay acceso a la memoria compartida\n");
     }else{
         // shmat se pega a la memoria compartida
-        Proceso * mem_address = (Proceso *) shmat(ready_id, (void*)0, 0);
+        Proceso * readyqueque_mem = (Proceso *) shmat(ready_id, (void*)0, 0);
         int * control_mem = (int*) shmat(control_id, (void*)0, 0);
-        Proceso * procesos_address = (Proceso *) shmat(procesos_id, (void*)0, 0);
+        Proceso * procesos_mem = (Proceso *) shmat(procesos_id, (void*)0, 0);
 
-        if(mem_address == (void*)-1 || control_mem == (void*)-1 
-            || procesos_address == (void*)-1){
+        if(readyqueque_mem == (void*)-1 || control_mem == (void*)-1 
+            || procesos_mem == (void*)-1){
             printf("No se puede apuntar a la memoria compartida\n");
         }else{
             int cant_lineas = control_mem[0];
@@ -37,8 +37,8 @@ int main()
             printf("PID                 Estado\n");
             printf("-------------------------------\n");
             for(int i=0; i<control_mem[2]; i++){
-                printf("%-20ld", procesos_address[i].pid);
-                switch(procesos_address[i].estado){
+                printf("%-20ld", procesos_mem[i].pid);
+                switch(procesos_mem[i].estado){
                     case Fuera:
                         printf("Fuera");
                         break;
@@ -63,19 +63,19 @@ int main()
             for(int i=0; i<cant_lineas; i++){
                 printf("%-9d", i);
 
-                if(mem_address[i].pid == -1){
+                if(readyqueque_mem[i].pid == -1){
                     printf("%-20s", "-");
                 }else{
-                    printf("%-20ld", mem_address[i].pid);
+                    printf("%-20ld", readyqueque_mem[i].pid);
                 }
 
                 printf("\n----------------------------\n");
             }
 
             //se despega de la memoria compartida
-            shmdt(mem_address);
+            shmdt(readyqueque_mem);
             shmdt(control_mem);
-            shmdt(procesos_address);
+            shmdt(procesos_mem);
         }
     }
 

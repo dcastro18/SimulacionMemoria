@@ -160,7 +160,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
     // pide el semáforo
     sem_wait(&sem_ready);
-    procesos_mem[pos_estado].estado = RegionCritica;
+    procesos_mem[pos_proceso].estado = RegionCritica;
 
     //printf("RC... ");
     sleep(1);         //para notarlo en el espia ¡NO BORRAR!
@@ -174,8 +174,7 @@ void * asignarEspacio_Paginacion(void * arg){
     int cant_pags_mem = control_mem[0];
     for(int i=0; i < cant_pags_mem; i++){
 
-       if(readyQueue_mem[i].pid == -1){
-            ocupado = false;    
+       if(readyQueue_mem[i].pid == -1){ 
             tamanoRestante--;
             if (tamanoRestante == 0)
                 break;
@@ -189,7 +188,7 @@ void * asignarEspacio_Paginacion(void * arg){
             // Solo en los espacios que esten vacios
             if (counter < cant_pags_proceso){
                 if(readyQueue_mem[i].pid == -1){
-                    readyQueue_mem[i] = procesos_mem[pos_estado];
+                    readyQueue_mem[i] = procesos_mem[pos_proceso];
                     bitacoraPaginas[counter] = i;
                     counter++;   
                 }
@@ -210,7 +209,7 @@ void * asignarEspacio_Paginacion(void * arg){
 
         // 4 Devuelve el semáforo
         sem_post(&sem_ready);
-        procesos_mem[pos_estado].estado = Ejecutando;
+        procesos_mem[pos_proceso].estado = Ejecutando;
         
 	   // 5 Sleep
         //sleep(1);//para notarlo en el espia ¡NO BORRAR!

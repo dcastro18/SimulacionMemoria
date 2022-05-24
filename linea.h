@@ -3,8 +3,12 @@
 
 typedef struct Linea
 {
-    int pid proceso;
-    int estado;
+    long int pid;
+    int segmentos[5]; 
+    int cant_pags; 
+    int tiempo;
+    Estado estado;
+
 } Linea;
 
 
