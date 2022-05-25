@@ -1,10 +1,5 @@
-24/05/2022 03:17:30: Proceso: Asignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:17:53: Proceso: Asignación. PID: 2. Filas Ocupadas:[6, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:18:09: Proceso: Asignación. PID: 3. Filas Ocupadas:[8, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:18:28: Proceso: Muere. El hilo 4 murió. Motivo: No encontró espacio
-24/05/2022 03:18:28: Proceso: Desasignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:18:34: Proceso: Desasignación. PID: 3. Filas Ocupadas:[8, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:18:36: Proceso: Desasignación. PID: 2. Filas Ocupadas:[6, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1].
-24/05/2022 03:18:47: Proceso: Asignación. PID: 5. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, -1, -1].
-24/05/2022 03:18:59: Proceso: Muere. El hilo 6 murió. Motivo: No encontró espacio
-24/05/2022 03:19:20: Proceso: Muere. El hilo 7 murió. Motivo: No encontró espacio
+24/05/2022 20:25:03: Proceso: Asignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, 7, 8, -1, -1, -1, -1, -1, -1].
+24/05/2022 20:25:22: Proceso: Muere. El proceso con PID 2 murió. Motivo: No encontró espacio
+24/05/2022 20:25:37: Proceso: Muere. El proceso con PID 3 murió. Motivo: No encontró espacio
+24/05/2022 20:25:53: Proceso: Desasignación. PID: 1. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, 7, 8, -1, -1, -1, -1, -1, -1].
+24/05/2022 20:25:55: Proceso: Asignación. PID: 4. Filas Ocupadas:[0, 1, 2, 3, 4, 5, 6, -1, -1, -1, -1, -1, -1, -1, -1].

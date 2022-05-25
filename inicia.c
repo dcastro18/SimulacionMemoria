@@ -58,10 +58,12 @@ int main()
         if(readyqueue_mem == (void *)-1 || control_mem == (void *)-1){
             printf("No se puede apuntar a la memoria compartida\n");
         }else{
-            control_mem[0] = cant_pags;   //cantidad de paginas de la memoria compartida
-            control_mem[1] = 1;             //el programa corre
-            control_mem[2] = 0;             //cantidad de procesos
+            control_mem[0] = cant_pags;     // cantidad de paginas de la memoria compartida
+            control_mem[1] = 1;             // el programa corre
+            control_mem[2] = 0;             // cantidad de procesos
             control_mem[3] = 0;             // cantidad de proceso creados
+            control_mem[4] = 0;             // cantidad de procesos finalizados
+            control_mem[5] = 0;             // cantidad de procesos muertos
 
             for(int i=0; i<cant_pags; i++){
                 readyqueue_mem[i].pid = -1;
